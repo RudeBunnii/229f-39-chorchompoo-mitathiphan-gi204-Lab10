@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -256,6 +257,21 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af7f2412ebc18848a4cbd60eca66939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleFollowCamera
+  target: {fileID: 1667597726}
+  offset: {x: 0, y: 3, z: -8}
+  smoothSpeed: 5
 --- !u!1 &406168340
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +549,7 @@ GameObject:
   - component: {fileID: 1667597726}
   - component: {fileID: 1667597725}
   - component: {fileID: 1667597727}
+  - component: {fileID: 1667597728}
   m_Layer: 0
   m_Name: AirplaneRoot
   m_TagString: Untagged
@@ -560,9 +577,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 3.99
+  m_Height: 4.03
   m_Direction: 2
-  m_Center: {x: 0, y: 0.81, z: 0}
+  m_Center: {x: 0, y: 0.83, z: 0}
 --- !u!4 &1667597726
 Transform:
   m_ObjectHideFlags: 0
@@ -607,6 +624,28 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &1667597728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667597724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd361fe41ac3dd5479acd861a136a997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AirplanePhysicsController
+  thrust: 40
+  liftCoefficient: 0.02
+  dragCoefficient: 0.02
+  sideDrag: 2
+  turnStrength: 0.5
+  stallAngle: 35
+  stallLiftMultiplier: 0.3
+  pitchPower: 100
+  rollPower: 140
+  yawPower: 100
 --- !u!1 &1920875410
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +697,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
